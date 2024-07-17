@@ -39,10 +39,12 @@ function Item(props: Readonly<ItemProps>) {
         }`}
       >
         <img
+          width="100%"
+          height="auto"
           alt={props.item.name}
-          src={props.item.image.mobile.src}
-          className="w-full h-auto rounded-[inherit] overflow-hidden"
-          srcSet={`${props.item.image.tablet.src} 768w, ${props.item.image.desktop.src} 1440w`}
+          className="w-full h-auto rounded-[inherit] overflow-hidden aspect-[1.55] sm:aspect-square"
+          srcSet={`${props.item.image.tablet.src} 428w, ${props.item.image.desktop.src} 502w, ${props.item.image.mobile.src} 654w`}
+          sizes="(max-width: 639px) 590px, (max-width: 1023px) 200px, 400px"
         />
         {currentItem ? (
           <div className="py-3 px-6 rounded-full border border-red flex absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-red items-center">
